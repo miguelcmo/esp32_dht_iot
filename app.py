@@ -12,10 +12,10 @@ if uploaded_file is not None:
    df1=pd.read_csv(uploaded_file)
    st.write(df1)
    st.subheader('Estadísticos básicos de los sensores.')
-   st.dataframe(df1["temperatura ESP32"].describe())
+   st.dataframe(df1["temperature ESP32"].describe())
    min_temp = st.slider('Selecciona la temperatura mínima (°C)', min_value=-10, max_value=45, value=23)
    # Filtrar el DataFrame utilizando query
-   filtrado_df = df1.query(f"`temperatura ESP32` > {min_temp}")
+   filtrado_df = df1.query(f"`temperature ESP32` > {min_temp}")
    # Mostrar el DataFrame filtrado
    st.subheader("Temperaturas superiores al valor configurado.")
    st.write('Dataframe Filtrado')
