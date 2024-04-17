@@ -8,8 +8,13 @@ image = Image.open('grafana2.jpg')
 st.image(image)
 
 uploaded_file = st.file_uploader('Choose a file')
+
 if uploaded_file is not None:
    df1=pd.read_csv(uploaded_file)
+
+   df1 = df1.set_index('Time')
+   st.line_chart(df1)
+   
    st.write(df1)
    st.subheader('Estadísticos básicos de los sensores.')
    st.dataframe(df1["temperature ESP32"].describe())
@@ -30,8 +35,6 @@ if uploaded_file is not None:
    st.write('Dataframe Filtrado')
    st.write(filtrado_df_max)
    
-   df1 = df1.set_index('Time')
-   st.line_chart(df1)
 
 else:
  st.warning('Necesitas cargar un archivo csv excel.')
