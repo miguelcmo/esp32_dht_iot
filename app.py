@@ -20,7 +20,7 @@ if uploaded_file is not None:
    st.subheader("Temperaturas superiores al valor configurado.")
    st.write('Dataframe Filtrado')
    st.write(filtrado_df)
-   st.line_chart(df1["temperature ESP32"], y=Time)
+   st.line_chart(df1["temperature ESP32"], y=df1["Time"])
 
 else:
  st.warning('Necesitas cargar un archivo csv excel.')
