@@ -21,8 +21,8 @@ if uploaded_file is not None:
    st.write('Dataframe Filtrado')
    st.write(filtrado_df)
    indice_tiempo = pd.date_range(start=inicio, periods=len(dataframe), freq='2S')
-    dataframe['Fecha'] =indice_tiempo
-    dataframe = dataframe.set_index('Fecha')
+    dataframe['Time'] = indice_tiempo
+    dataframe = dataframe.set_index('Time')
     st.dataframe(dataframe)
     st.line_chart(dataframe)
 
