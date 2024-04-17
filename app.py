@@ -20,7 +20,7 @@ if uploaded_file is not None:
    st.subheader("Temperaturas superiores al valor configurado.")
    st.write('Dataframe Filtrado')
    st.write(filtrado_df)
-   st.line_chart(dataframe)
+   st.line_chart(df1)
 
 else:
  st.warning('Necesitas cargar un archivo csv excel.')
