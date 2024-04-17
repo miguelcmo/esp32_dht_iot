@@ -20,7 +20,11 @@ if uploaded_file is not None:
    st.subheader("Temperaturas superiores al valor configurado.")
    st.write('Dataframe Filtrado')
    st.write(filtrado_df)
-   st.line_chart(df1["temperature ESP32"], y=df1["Time"])
+   indice_tiempo = pd.date_range(start=inicio, periods=len(dataframe), freq='2S')
+    dataframe['Fecha'] =indice_tiempo
+    dataframe = dataframe.set_index('Fecha')
+    st.dataframe(dataframe)
+    st.line_chart(dataframe)
 
 else:
  st.warning('Necesitas cargar un archivo csv excel.')
