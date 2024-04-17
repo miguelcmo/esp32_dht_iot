@@ -16,6 +16,9 @@ if uploaded_file is not None:
    min_temp = st.slider('Selecciona la temperatura mínima (°C)', min_value=-10, max_value=45, value=23)
    # Filtrar el DataFrame utilizando query
    filtrado_df = df1.query(f"`temperature ESP32` > {min_temp}")
+   max_temp = st.slider('Selecciona la temperatura mínima (°C)', min_value=-10, max_value=45, value=23)
+   # Filtrar el DataFrame utilizando query
+   filtrado_df = df1.query(f"`temperature ESP32` < {max_temp}")
    # Mostrar el DataFrame filtrado
    st.subheader("Temperaturas superiores al valor configurado.")
    st.write('Dataframe Filtrado')
